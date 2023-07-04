@@ -12,7 +12,7 @@ const TransactionForm = () => {
     addTransaction({
       id : window.crypto.randomUUID(),
       description,
-      amount
+      amount : +amount
     })
   }
 
@@ -20,7 +20,7 @@ const TransactionForm = () => {
     <div>
       <form onSubmit={onSubmit}>
         <input onChange={(e) => setDescription(e.target.value)} type="text" placeholder='Enter a description'/>
-        <input onChange={(e) => setAmount(e.target.value)} type="number" min={0} step={0.5} placeholder='0.0'/>
+        <input onChange={(e) => setAmount(e.target.value)} type="number" step={0.5} placeholder='0.0'/>
         <button>
           Add transaction
         </button>
